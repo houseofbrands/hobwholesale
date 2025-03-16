@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // For categories with only one subcategory, open PDF directly
       if (subcategories.length === 1) {
-        const pdfUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(`https://houseofbrands.github.io/hobwholesale/assets/Pdfs/${folderName}/${encodeURIComponent(subcategories[0])}.pdf`)}&embedded=true`;
+        const pdfUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(`https://houseofbrands.github.io/sourcingwala/assets/Pdfs/${folderName}/${encodeURIComponent(subcategories[0])}.pdf`)}&embedded=true`;
         window.open(pdfUrl, '_blank');
         return;
       }
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.textContent = sub;
         btn.classList.add('sub-btn');
         btn.addEventListener('click', function () {
-          const pdfUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(`https://houseofbrands.github.io/hobwholesale/assets/Pdfs/${folderName}/${encodeURIComponent(sub)}.pdf`)}&embedded=true`;
+          const pdfUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(`https://houseofbrands.github.io/sourcingwala/assets/Pdfs/${folderName}/${encodeURIComponent(sub)}.pdf`)}&embedded=true`;
           window.open(pdfUrl, '_blank');
         });
         subCatContainer.appendChild(btn);
@@ -67,5 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Close the subcategories overlay
   document.getElementById('closeSubcategories').addEventListener('click', function () {
     document.getElementById('subcategories').classList.add('hidden');
+  });
+  
+  // Mobile Menu Toggle
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('header nav');
+  
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('header nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+    });
   });
 });
