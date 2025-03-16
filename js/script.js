@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // For categories with only one subcategory, open PDF directly
       if (subcategories.length === 1) {
-        const pdfUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(`https://houseofbrands.github.io/sourcingwala/assets/Pdfs/${folderName}/${encodeURIComponent(subcategories[0])}.pdf`)}&embedded=true`;
+        const pdfUrl = `https://houseofbrands.github.io/hobwholesale/assets/Pdfs/${folderName}/${encodeURIComponent(subcategories[0])}.pdf`;
         window.open(pdfUrl, '_blank');
         return;
       }
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.textContent = sub;
         btn.classList.add('sub-btn');
         btn.addEventListener('click', function () {
-          const pdfUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(`https://houseofbrands.github.io/sourcingwala/assets/Pdfs/${folderName}/${encodeURIComponent(sub)}.pdf`)}&embedded=true`;
+          const pdfUrl = `https://houseofbrands.github.io/hobwholesale/assets/Pdfs/${folderName}/${encodeURIComponent(sub)}.pdf`;
           window.open(pdfUrl, '_blank');
         });
         subCatContainer.appendChild(btn);
